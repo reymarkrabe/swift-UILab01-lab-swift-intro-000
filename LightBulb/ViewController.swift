@@ -24,7 +24,23 @@ class ViewController: UIViewController {
     
     @IBAction func colorSelected(_ sender: UISegmentedControl) {
         
-        print(sender.selectedSegmentIndex)
+        if(sender.selectedSegmentIndex == 0){
+            lightBulb.backgroundColor =  UIColor.red
+        }
+        else if(sender.selectedSegmentIndex == 1) {
+            lightBulb.backgroundColor = UIColor.blue
+        }
+        else if(sender.selectedSegmentIndex == 2) {
+            lightBulb.backgroundColor = UIColor.green
+        }
+        else if(sender.selectedSegmentIndex ==  3){
+            lightBulb.backgroundColor = UIColor.yellow
+        }
+        else {
+            let alert = UIAlertController(title: "Alert", message: "None of the above.", preferredStyle: UIAlertControllerStyle.alert)
+            self.present(alert, animated: true, completion: nil)
+        }
+       
         
     }
     
